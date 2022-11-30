@@ -32,7 +32,6 @@ async function addContact({ name, email, phone }) {
   contacts.push(newContact);
   await updateContacts(contacts);
 
-  console.table(contacts);
   return newContact;
 }
 
@@ -47,7 +46,6 @@ async function updateContact(id, data) {
   contacts[index] = { id, ...data };
 
   await updateContacts(contacts);
-  console.table(contacts);
   return contacts[index];
 }
 
@@ -61,7 +59,6 @@ async function removeContact(id) {
 
   const [result] = contacts.splice(index, 1);
   await updateContacts(contacts);
-  console.table(contacts);
   return result;
 }
 

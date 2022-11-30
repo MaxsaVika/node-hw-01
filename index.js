@@ -18,12 +18,12 @@ async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
       const allContacts = await contacts.listContacts();
-      console.log(allContacts);
+      console.table(allContacts);
       break;
 
     case "get":
       const oneContact = await contacts.getContactById(id);
-      console.log(oneContact);
+      console.table(oneContact);
       break;
 
     case "add":
